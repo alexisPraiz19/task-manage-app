@@ -1,0 +1,35 @@
+:root{
+    /* Font Size */
+    --strong: 1.25rem;
+    --medium: 1rem;
+    --medium-small: 0.875rem;
+    --small: 0.75rem;
+    --extra-small: 0.5rem;
+
+    /* Colores */
+    --black-100: #191B1F;
+    --black-200: #2A2D32;
+    --grey-100: #7E878D;
+    --grey-200: #3A3E44;
+    --white-100: #F0F6FE;
+    --white-200: #FEF7EE;
+    --white-300: #FEF7EE;
+
+    --red: #752522;
+    --pink: #f1aaff;
+    --blue: #253985;
+    --cream-blue: #DEE9FC;
+    --orange: #C18D30;
+    --cream-yellow: #fdf7b8;
+    --lima: #E2FBE8;
+    --green: #2ac84c;
+}
+
+
+body.light-mode{
+    /* Invertir colores */
+    
+    --black-100: #F0F6FE;
+    --black-200: #DEE9FC;
+    --white-100: #191B1F;
+}

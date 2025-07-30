@@ -1,0 +1,10 @@
+@import "fonts.css";
+@import "variables.css";
+@import "reusable.css";
+@import "animation.css";
+@import "base.css";
+
+@import "../app/sidebar.css";
+@import "../app/main.css";
+@import "../app/newBoardModal.css";
+@import "../app/taskDetails.css";

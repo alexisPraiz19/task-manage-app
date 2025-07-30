@@ -1,0 +1,161 @@
+.sidebar{
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-rows: repeat(2, max-content) 1fr;
+    width: 300px; min-height: 100vh;
+    padding: 8px 2px;
+    background-color: transparent;
+    transition: width .2s ease;
+
+    .sidebar-closeBTN{
+        position: relative;
+        width: 38px; height: 38px;
+        margin: 0 0 20px 6px;
+        justify-content: center;
+        background-color: var(--black-200);
+        border-radius: 50%;
+
+        svg{
+            position: absolute;
+            pointer-events: none;
+            transition: opacity .2s ease;
+            &:last-child{ opacity: 0 }
+        }
+    }
+
+    .sidebar-boards_links{
+        gap: 10px;
+
+        .sidebar-boards_links__item{
+            gap: 10px;
+            padding: 8px;
+            font-size: var(--medium-small);
+            border-radius: 40px;
+            cursor: pointer;
+
+            &:has(.active-board){ outline: 2px solid var(--blue) }
+            .item-input{ display: none }
+
+            .item-emoji{
+                width: 36px; 
+                height: 36px;
+            }
+
+            .item-boardName{ 
+                transition: opacity .2s ease;
+                min-width: max-content;
+            }
+        }
+    }
+
+    .sidebar-addBoard_BTN{
+        padding: 9px 13px;
+        color: var(--white-100);
+        text-align: start;
+        background-color: transparent;
+        border-radius: 25px;
+
+        &:hover{ outline: 1px solid var(--white-100) !important }
+
+        span{ pointer-events: none }
+
+        span:first-child{
+            width: 25px; height: 25px;
+            justify-content: center;
+            background-color: var(--white-100);
+            border-radius: 50%;
+        }
+
+        span:last-child{
+            margin-left: 10px;
+            min-width: fit-content;
+        }
+    }
+
+    .sidebar-dark_light__BTNS{
+        position: relative;
+        gap: 15px;
+        margin-top: 20px;
+        padding: 5px;
+        align-self: end;
+        background-color: var(--black-200);
+        border-radius: 10px;
+
+        &::after{
+            content: "";
+            position: absolute;
+            left: 5px;
+            width: 50%; height: calc(100% - 10px);
+            background-color: var(--black-100);
+            border-radius: 10px;
+            transition: transform .2s ease;
+            z-index: 1;
+        }
+
+        button{
+            flex: 1;
+            gap: 4px;
+            justify-content: center;
+            padding-block: 10px;
+            color: currentColor;
+            background-color: transparent;
+            z-index: 2;
+
+            svg{ pointer-events: none }
+            span{ min-width: max-content }
+        }
+    }
+
+    .sidebar-dark_light__BTNS__active::after{ transform: translateX(calc(100% - 11px)) }
+}
+
+/* Minimizar menú */
+.thin-sidebar{
+    width: 56px;
+    overflow: hidden;
+
+    .sidebar-closeBTN{
+        svg:first-child{ opacity: 0 }
+        svg:last-child{ opacity: 1 }
+    }
+
+    .sidebar-boards_links{
+        .sidebar-boards_links__item{
+            width: fit-content;
+            .item-boardName{ animation: hidde-boardName .2s ease forwards }
+        }
+
+        .sidebar-addBoard_BTN{
+            width: fit-content;
+            padding: 13px;
+            span:last-child{ animation: hidde-boardName .2s ease forwards }
+        }
+    }
+
+    .sidebar-dark_light__BTNS{
+        position: relative;
+        width: 50px; height: 50px;
+        background-color: transparent;
+
+        &::after{ width: 78% !important }
+
+        button{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            justify-content: center;
+            transition: opacity .1s ease;
+            outline: 2px solid var(--black-200);
+            border-radius: 10px;
+            
+            &:last-child{ opacity: 0 }
+            span{ display: none; }
+        }
+    }
+
+    .sidebar-dark_light__BTNS__active{
+        button:first-child{ opacity: 0 }
+        button:last-child{ opacity: 1 }
+    }
+}

@@ -1,0 +1,165 @@
+.task-details_modal{
+    .task-details_modal__image-container{
+        position: relative;
+        width: 100%; height: 120px;
+        margin-bottom: 16px;
+        text-align: center;
+        align-content: center;
+        border-radius: 10px;
+        overflow: hidden;
+        outline: 2px solid var(--grey-200);
+
+        &:hover > .task-details_modal__image-overlay{
+            opacity: 1;
+            pointer-events: unset;
+        }
+
+        .image .background-image{
+            width: 100%; height: 100%;
+            object-position: center center;
+            object-fit: cover;
+            aspect-ratio: 16/10;
+        }
+
+        .task-details_modal__image-overlay{
+            position: absolute;
+            left: 0; top: 0;
+            justify-content: center;
+            gap: 10px;
+            width: 100%; height: 100%;
+            background-color: #0006;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .1s ease;
+
+            button{
+                padding: 8px 22px;
+                border-radius: 25px;
+                filter: brightness(1.8);
+
+                &:first-child{
+                    gap: 10px;
+                    background-color: var(--blue);
+                }
+                &:last-child{ background-color: var(--red) }
+            }
+        }
+    }
+
+    .task-details_modal__label{ 
+        display: block;   
+        margin-bottom: 16px; 
+    }
+
+    .task-details_modal__statusBox{
+        position: relative;
+        margin-bottom: 16px;
+    }
+
+    .task-details_modal__tagsBox{
+        .r-currentSelected{
+            gap: 4px;
+            flex-wrap: wrap;
+
+            span{ 
+                padding: 2px 4px;
+                font-size: var(--small);
+                border: 1.5px solid var(--grey-200);
+                border-radius: 3px;
+            }
+        }
+
+        .r-list_options{
+            .list-item{
+                padding-inline: 2px;
+                align-content: center;
+                border-radius: 5px;
+            
+                &:hover{
+                    background-color: rgba(70, 70, 70, 0.193);
+
+                    & > .tag-item button{ 
+                        opacity: 1; 
+                        pointer-events: unset;
+                    }
+                }
+            }
+
+            .tag-item{
+                justify-content: space-between;
+                font-size: var(--medium-small);
+
+                button{
+                    padding: 3px 8px;
+                    background-color: var(--red);
+                    border-radius: 5px;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity .1s ease;
+                    filter: brightness(1.5);
+                }
+            }
+
+            .add-new-tag{
+                justify-content: space-between;
+                gap: 7px;
+                width: 100%; height: 30px;
+                margin-top: 10px;
+
+                input{
+                    flex: 1;
+                    height: 100%;
+                    padding-inline: 7px;
+                    color: currentColor;
+                    background-color: transparent;
+                    border: none;
+                    outline: 2px solid var(--grey-200);
+                    border-radius: 3px;
+
+                    &:focus{ outline: 2px solid var(--blue); }
+                }
+
+                button{
+                    width: fit-content; height: 100%;
+                    padding-inline: 8px;
+                    font-size: var(--small);
+                    background-color: #1371de;
+                    border-radius: 3px;
+                    outline: 2px solid #1371de;
+
+                    &:hover{ filter: brightness(1.2); }
+
+                    svg{
+                        pointer-events: none;
+
+                        path{ 
+                            transform: scale(.8) translateY(2px);
+                            stroke: var(--white-100);
+                        }
+                    } 
+                }
+            }
+        } 
+    }
+
+    .task-details_modal__BTNS{
+        gap: 12px;
+
+        button{
+            padding: 8px 22px;
+            border-radius: 25px;
+
+            &:first-child{
+                gap: 10px;
+                background-color: var(--blue);
+                filter: brightness(1.8);
+            }
+
+            &:last-child{
+                color: var(--grey-100) !important;
+                background-color: transparent;
+                outline: 2px solid var(--grey-100);
+            }
+        }
+    }
+}
