@@ -1,3 +1,6 @@
-export const plugins = [
-    require('autoprefixer')
-];
+export default {
+  plugins: {
+    autoprefixer: {},
+    'postcss-preset-env': {},
+  },
+};
